@@ -1,14 +1,17 @@
 type ToDoInputProps = {
   toDoInput: string;
   setToDoInput: (value: string) => void;
+  uploadToList: (e: React.FormEvent<HTMLFormElement>) => void;
 } 
 
-const TaskInput = ({toDoInput, setToDoInput}: ToDoInputProps) => {
+const TaskInput = ({toDoInput, setToDoInput, uploadToList}: ToDoInputProps) => {
 
   return (
 
     <div>
-      <form>
+      <form
+      onSubmit={uploadToList}
+      >
         <input
         onChange={(e) => {
           setToDoInput(e.target.value)
@@ -18,7 +21,7 @@ const TaskInput = ({toDoInput, setToDoInput}: ToDoInputProps) => {
         required
         />
         <button
-        type="submit"
+        type='submit'
         >
           Button
         </button>
