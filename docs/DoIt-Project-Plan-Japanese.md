@@ -20,6 +20,10 @@
 - TailwindCSS
 - Browser Local Storage
 
+### 使用ライブラリー
+
+- Dayjs
+
 ---
 
 **2025年 5月 8日 開発開始**

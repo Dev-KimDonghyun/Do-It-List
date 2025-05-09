@@ -20,6 +20,10 @@
 - TailwindCSS
 - Browser Local Storage
 
+### 사용 라이브러리
+
+- Dayjs
+
 ---
 
 **2025년 5월 8일 개발 개시**
