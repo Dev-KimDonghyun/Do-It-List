@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import dayjs from "dayjs";
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 import './index.css';
@@ -24,7 +25,7 @@ function App() {
     const newToDo: ToDo = {
       id: Date.now(),
       content: toDoInput,
-      whenCreated: '', // Enter Time with Dayjs JavaScript Library
+      whenCreated: dayjs().format('YYYY/MM/DD HH:mm'),
       didIt: false
     };
 
