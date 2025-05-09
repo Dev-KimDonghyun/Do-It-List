@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
 import './index.css';
 
 function App() {
+
+  const [ toDoInput, setToDoInput ] = useState<string>('');
 
   return (
 
@@ -13,7 +16,10 @@ function App() {
         </header>
         <main>
           <div>
-            <TaskInput/>
+            <TaskInput
+            toDoInput={toDoInput}
+            setToDoInput={setToDoInput}
+            />
           </div>
           <div>
             <TaskList/>
