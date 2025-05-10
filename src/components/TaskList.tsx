@@ -1,7 +1,33 @@
-const TaskList = () => {
+import TaskItem from "./TaskItem";
+
+type ToDo = {
+  id: number;
+  content: string;
+  whenCreated: string;
+  didIt: boolean;
+};
+
+type TaskListProps = {
+  toDoList: ToDo[];
+};
+
+const TaskList = ({toDoList}: TaskListProps) => {
+
   return (
-    <div>TaskList</div>
+
+    <div>
+      <ul>
+        {toDoList.map((todo) => (
+          <TaskItem
+          key={todo.id}
+          todo={todo}
+          />
+        ))}
+      </ul>
+    </div>
+
   );
+
 };
 
 export default TaskList;

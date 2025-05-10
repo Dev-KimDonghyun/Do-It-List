@@ -1,10 +1,10 @@
-type ToDoInputProps = {
+type TaskInputProps = {
   toDoInput: string;
   setToDoInput: (value: string) => void;
   uploadToList: (e: React.FormEvent<HTMLFormElement>) => void;
 } 
 
-const TaskInput = ({toDoInput, setToDoInput, uploadToList}: ToDoInputProps) => {
+const TaskInput = ({toDoInput, setToDoInput, uploadToList}: TaskInputProps) => {
 
   return (
 

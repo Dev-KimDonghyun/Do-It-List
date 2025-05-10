@@ -1,7 +1,26 @@
-const TaskItem = () => {
+type TaskItem = {
+  todo: {
+    id: number;
+    content: string;
+    whenCreated: string;
+    didIt: boolean;
+  };
+};
+
+const TaskItem = ({todo}: TaskItem) => {
+
   return (
-    <div>TaskItem</div>
+
+    <div>
+      <li
+      key={todo.id}
+      >
+        {todo.content}
+      </li>
+    </div>
+
   );
+
 };
 
 export default TaskItem;

@@ -61,7 +61,9 @@ function App() {
             />
           </div>
           <div>
-            <TaskList/>
+            <TaskList
+            toDoList={toDoList}
+            />
           </div>
         </main>
         <footer>
