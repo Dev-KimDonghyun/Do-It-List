@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import dayjs from "dayjs";
 import TaskInput from './components/TaskInput';
 import TaskList from './components/TaskList';
@@ -15,6 +15,13 @@ function App() {
 
   const [ toDoInput, setToDoInput ] = useState<string>('');
   const [ toDoList, setToDoList] = useState<ToDo[]>([]);
+
+  useEffect(() => {
+    const localStorageValue: string | null = localStorage.getItem('DevKimDH_To_Do_Web_App_Value');
+    if (localStorageValue !== null) {
+      setToDoList(JSON.parse(localStorageValue));
+    };
+  }, []);
 
   const uploadToList = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
