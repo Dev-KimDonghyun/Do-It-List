@@ -5,9 +5,10 @@ type TaskItem = {
     whenCreated: string;
     didIt: boolean;
   };
+  deleteToDo: (id:number) => void;
 };
 
-const TaskItem = ({todo}: TaskItem) => {
+const TaskItem = ({todo, deleteToDo}: TaskItem) => {
 
   return (
 
@@ -16,6 +17,10 @@ const TaskItem = ({todo}: TaskItem) => {
       key={todo.id}
       >
         {todo.content}
+        <button
+        onClick={() => {deleteToDo(todo.id)}}>
+          Delete
+        </button>
       </li>
     </div>
 

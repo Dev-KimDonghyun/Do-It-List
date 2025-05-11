@@ -14,7 +14,7 @@ type ToDo = {
 function App() {
 
   const [ toDoInput, setToDoInput ] = useState<string>('');
-  const [ toDoList, setToDoList] = useState<ToDo[]>([]);
+  const [ toDoList, setToDoList ] = useState<ToDo[]>([]);
 
   useEffect(() => {
     const localStorageValue: string | null = localStorage.getItem('DevKimDH_To_Do_Web_App_Value');
@@ -24,6 +24,7 @@ function App() {
   }, []);
 
   const uploadToList = (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault();
 
     if (toDoInput.trim() === '')
@@ -45,6 +46,15 @@ function App() {
     localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(newList));
   };
 
+  const deleteToDo = (id: number) => {
+    const deleteUpdateToDo = toDoList.filter((todo) => (
+      todo.id !== id
+    ));
+
+    setToDoList(deleteUpdateToDo);
+    localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(deleteUpdateToDo));
+  };
+
   return (
 
     <div>
@@ -63,6 +73,7 @@ function App() {
           <div>
             <TaskList
             toDoList={toDoList}
+            deleteToDo={deleteToDo}
             />
           </div>
         </main>

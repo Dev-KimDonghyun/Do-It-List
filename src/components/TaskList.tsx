@@ -9,9 +9,10 @@ type ToDo = {
 
 type TaskListProps = {
   toDoList: ToDo[];
+  deleteToDo: (id:number) => void;
 };
 
-const TaskList = ({toDoList}: TaskListProps) => {
+const TaskList = ({toDoList, deleteToDo}: TaskListProps) => {
 
   return (
 
@@ -21,6 +22,7 @@ const TaskList = ({toDoList}: TaskListProps) => {
           <TaskItem
           key={todo.id}
           todo={todo}
+          deleteToDo={deleteToDo}
           />
         ))}
       </ul>
