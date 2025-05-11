@@ -6,9 +6,10 @@ type TaskItem = {
     didIt: boolean;
   };
   deleteToDo: (id:number) => void;
+  compeleteToDo: (id:number) => void;
 };
 
-const TaskItem = ({todo, deleteToDo}: TaskItem) => {
+const TaskItem = ({todo, deleteToDo, compeleteToDo}: TaskItem) => {
 
   return (
 
@@ -17,6 +18,11 @@ const TaskItem = ({todo, deleteToDo}: TaskItem) => {
       key={todo.id}
       >
         {todo.content}
+        {todo.didIt ? <span>Done</span> : <span>Doing</span>}
+        <button
+          onClick={() => {compeleteToDo(todo.id)}}>
+          {todo.didIt ? <span>Undo</span> : <span>Done</span>}
+        </button>
         <button
         onClick={() => {deleteToDo(todo.id)}}>
           Delete

@@ -55,6 +55,15 @@ function App() {
     localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(deleteUpdateToDo));
   };
 
+  const compeleteToDo = (id: number) => {
+    const compeleUpdateToDo = toDoList.map((todo) => (
+      todo.id === id ? {...todo, didIt: !todo.didIt} : todo
+    ));
+
+    setToDoList(compeleUpdateToDo);
+    localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(compeleUpdateToDo));
+  };
+
   return (
 
     <div>
@@ -74,6 +83,7 @@ function App() {
             <TaskList
             toDoList={toDoList}
             deleteToDo={deleteToDo}
+            compeleteToDo={compeleteToDo}
             />
           </div>
         </main>
