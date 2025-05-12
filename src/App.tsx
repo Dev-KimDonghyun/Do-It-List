@@ -1,76 +1,81 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import dayjs from "dayjs";
-import TaskInput from './components/TaskInput';
-import TaskList from './components/TaskList';
-import './index.css';
+import TaskInput from "./components/TaskInput";
+import TaskList from "./components/TaskList";
+import "./index.css";
 
 type ToDo = {
   id: number;
   content: string;
   whenCreated: string;
   didIt: boolean;
-}
+};
 
 function App() {
-
-  const [ toDoInput, setToDoInput ] = useState<string>('');
-  const [ toDoList, setToDoList ] = useState<ToDo[]>([]);
+  const [toDoInput, setToDoInput] = useState<string>("");
+  const [toDoList, setToDoList] = useState<ToDo[]>([]);
 
   useEffect(() => {
-    const localStorageValue: string | null = localStorage.getItem('DevKimDH_To_Do_Web_App_Value');
+    const localStorageValue: string | null = localStorage.getItem(
+      "DevKimDH_To_Do_Web_App_Value"
+    );
     if (localStorageValue !== null) {
       setToDoList(JSON.parse(localStorageValue));
-    };
+    }
   }, []);
 
   const uploadToList = (e: React.FormEvent<HTMLFormElement>) => {
-
     e.preventDefault();
 
-    if (toDoInput.trim() === '')
-      return;
+    if (toDoInput.trim() === "") return;
 
     const newToDo: ToDo = {
       id: Date.now(),
       content: toDoInput,
-      whenCreated: dayjs().format('YYYY/MM/DD HH:mm'),
-      didIt: false
+      whenCreated: dayjs().format("YYYY/MM/DD HH:mm"),
+      didIt: false,
     };
 
     const newList = [...toDoList, newToDo];
-    setToDoInput('');
+    setToDoInput("");
     setToDoList(newList);
-    
+
     console.log(newList); // Test Code //
 
-    localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(newList));
+    localStorage.setItem(
+      "DevKimDH_To_Do_Web_App_Value",
+      JSON.stringify(newList)
+    );
   };
 
   const deleteToDo = (id: number) => {
-    const deleteUpdateToDo = toDoList.filter((todo) => (
-      todo.id !== id
-    ));
+    const deleteUpdateToDo = toDoList.filter((todo) => todo.id !== id);
 
     setToDoList(deleteUpdateToDo);
-    localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(deleteUpdateToDo));
+    localStorage.setItem(
+      "DevKimDH_To_Do_Web_App_Value",
+      JSON.stringify(deleteUpdateToDo)
+    );
   };
 
   const deleteToDoAll = () => {
     setToDoList([]);
-    localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify([]));
+    localStorage.setItem("DevKimDH_To_Do_Web_App_Value", JSON.stringify([]));
   };
 
   const compeleteToDo = (id: number) => {
-    const compeleUpdateToDo = toDoList.map((todo) => (
-      todo.id === id ? {...todo, didIt: !todo.didIt} : todo
-    ));
+    const compeleUpdateToDo = toDoList.map((todo) =>
+      todo.id === id ? { ...todo, didIt: !todo.didIt } : todo
+    );
 
     setToDoList(compeleUpdateToDo);
-    localStorage.setItem(('DevKimDH_To_Do_Web_App_Value'), JSON.stringify(compeleUpdateToDo));
+    localStorage.setItem(
+      "DevKimDH_To_Do_Web_App_Value",
+      JSON.stringify(compeleUpdateToDo)
+    );
   };
 
   return (
-
     <div>
       <div>
         <header>
@@ -79,17 +84,17 @@ function App() {
         <main>
           <div>
             <TaskInput
-            toDoInput={toDoInput}
-            setToDoInput={setToDoInput}
-            uploadToList={uploadToList}
+              toDoInput={toDoInput}
+              setToDoInput={setToDoInput}
+              uploadToList={uploadToList}
             />
           </div>
           <div>
             <TaskList
-            deleteToDoAll={deleteToDoAll}
-            toDoList={toDoList}
-            deleteToDo={deleteToDo}
-            compeleteToDo={compeleteToDo}
+              deleteToDoAll={deleteToDoAll}
+              toDoList={toDoList}
+              deleteToDo={deleteToDo}
+              compeleteToDo={compeleteToDo}
             />
           </div>
         </main>
@@ -98,9 +103,7 @@ function App() {
         </footer>
       </div>
     </div>
-
   );
-
-};
+}
 
 export default App;
