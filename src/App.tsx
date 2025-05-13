@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
-import "./index.css";
+import "./styles/index.css";
 
 type ToDo = {
   id: number;
