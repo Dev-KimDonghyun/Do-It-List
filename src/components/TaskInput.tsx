@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 type TaskInputProps = {
   toDoInput: string;
   setToDoInput: (value: string) => void;
@@ -9,10 +11,15 @@ const TaskInput = ({
   setToDoInput,
   uploadToList,
 }: TaskInputProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
   return (
     <div>
       <form onSubmit={uploadToList}>
         <input
+          ref={inputRef}
           onChange={(e) => {
             setToDoInput(e.target.value);
             console.log(e.target.value); // Test Code //
