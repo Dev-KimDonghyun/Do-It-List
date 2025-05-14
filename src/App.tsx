@@ -96,9 +96,10 @@ function App() {
 
   return (
     <div>
-      <div style={{ height: "calc(var(--vh, 1vh) * 100)" }}>
-        <header>
-          <h1>Do It! List</h1>
+      <div style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      className="w-full bg-sky-100 text-center justify-center items-center overflow-x-hidden">
+        <header className="py-12">
+          <h1 className="text-5xl md:text-6xl text-sky-600">Do It! List</h1>
         </header>
         <main>
           <div>
