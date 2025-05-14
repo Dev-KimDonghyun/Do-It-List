@@ -24,6 +24,25 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const localStorageValue: string | null = localStorage.getItem(
+      "DevKimDH_To_Do_Web_Value"
+    );
+    if (localStorageValue !== null) {
+      const savedValue = JSON.parse(localStorageValue);
+      setToDoList(savedValue);
+    }
+
+    const setDisplayHeight = () => {
+      const displayHeight = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${displayHeight}px`);
+    };
+
+    setDisplayHeight();
+    window.addEventListener("resize", setDisplayHeight);
+    return () => window.removeEventListener("resize", setDisplayHeight);
+  }, []);
+
   const uploadToList = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -77,7 +96,7 @@ function App() {
 
   return (
     <div>
-      <div>
+      <div style={{ height: "calc(var(--vh, 1vh) * 100)" }}>
         <header>
           <h1>Do It! List</h1>
         </header>
