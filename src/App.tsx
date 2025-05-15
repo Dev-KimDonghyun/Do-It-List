@@ -94,10 +94,16 @@ function App() {
     );
   };
 
+  const clickToDevKimGitHub = () => {
+    window.open("https://github.com/Dev-KimDonghyun", "_blank");
+  };
+
   return (
     <div>
-      <div style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      className="w-full bg-sky-100 text-center justify-center items-center overflow-x-hidden">
+      <div
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+        className="w-full bg-sky-100 text-center justify-center items-center overflow-x-hidden"
+      >
         <header className="py-12">
           <h1 className="text-5xl md:text-6xl text-sky-600">Do It! List</h1>
         </header>
@@ -118,8 +124,11 @@ function App() {
             />
           </div>
         </main>
-        <footer className="w-full h-16 flex fixed flex-col text-md md:text-lg gap-y-1 md:gap-y-2 bottom-0 text-center justify-center items-center bg-gray-600 text-white">
+        <footer className="w-full h-16 flex fixed flex-col text-md md:text-lg gap-y-0.5 py-2 bottom-0 text-center justify-center items-center bg-gray-600 text-white">
           <p>&copy; 2025 Dev-KimDonghyun. All rights reserved.</p>
+          <div className="flex flex-col items-center cursor-pointer">
+            <p onClick={clickToDevKimGitHub}>Visit Github</p>
+          </div>
         </footer>
       </div>
     </div>
