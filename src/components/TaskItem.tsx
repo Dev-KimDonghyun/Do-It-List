@@ -49,6 +49,7 @@ const TaskItem = ({ todo, deleteToDo, compeleteToDo }: TaskItem) => {
           >
             Delete
           </button>
+          <span className="w-24 md:w-auto h-10 md:h-auto ml-0 md:ml-2 pl-2 md:px-0 text-sm md:text-md">{todo.whenCreated}</span>
         </div>
       </li>
     </div>
