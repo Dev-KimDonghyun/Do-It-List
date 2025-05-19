@@ -16,7 +16,7 @@ type TaskListProps = {
 const TaskList = ({ toDoList, deleteToDo, compeleteToDo }: TaskListProps) => {
   return (
     <div>
-      <ul>
+      <ul className="mb-24">
         {toDoList.map((todo) => (
           <TaskItem
             key={todo.id}
