@@ -11,18 +11,11 @@ type TaskListProps = {
   toDoList: ToDo[];
   deleteToDo: (id: number) => void;
   compeleteToDo: (id: number) => void;
-  deleteToDoAll: () => void;
 };
 
-const TaskList = ({
-  toDoList,
-  deleteToDo,
-  compeleteToDo,
-  deleteToDoAll,
-}: TaskListProps) => {
+const TaskList = ({ toDoList, deleteToDo, compeleteToDo }: TaskListProps) => {
   return (
     <div>
-      <button onClick={deleteToDoAll}>Delete All</button>
       <ul>
         {toDoList.map((todo) => (
           <TaskItem

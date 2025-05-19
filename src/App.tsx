@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import "./styles/index.css";
+import DeleteAllBtn from "./components/DeleteAllBtn";
 
 type ToDo = {
   id: number;
@@ -116,8 +117,10 @@ function App() {
             />
           </div>
           <div>
+            <DeleteAllBtn deleteToDoAll={deleteToDoAll} />
+          </div>
+          <div>
             <TaskList
-              deleteToDoAll={deleteToDoAll}
               toDoList={toDoList}
               deleteToDo={deleteToDo}
               compeleteToDo={compeleteToDo}
