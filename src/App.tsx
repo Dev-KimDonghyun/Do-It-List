@@ -60,8 +60,6 @@ function App() {
     setToDoInput("");
     setToDoList(newList);
 
-    console.log(newList); // Test Code //
-
     localStorage.setItem(
       "DevKimDH_To_Do_Web_App_Value",
       JSON.stringify(newList)

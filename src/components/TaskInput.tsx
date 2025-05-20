@@ -23,7 +23,6 @@ const TaskInput = ({
           ref={inputRef}
           onChange={(e) => {
             setToDoInput(e.target.value);
-            console.log(e.target.value); // Test Code //
           }}
           value={toDoInput}
           required
