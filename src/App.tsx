@@ -3,8 +3,8 @@ import dayjs from "dayjs";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 import DeleteAllBtn from "./components/DeleteAllBtn";
-import "./styles/index.css";
 import Footer from "./components/Footer";
+import "./styles/index.css";
 
 type ToDo = {
   id: number;
