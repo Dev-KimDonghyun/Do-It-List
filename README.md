@@ -36,6 +36,15 @@ This project is licensed under the MIT License
 
 Version 1.0.0 - 2025.05.08 ~ 2025.05.19
 
+Version 1.1.0 - 2025.06.05
+
+## Update Log
+
+### 1.1.0 - 2025.06.05
+
+- Extracted Buttons from Task Item into a Separate Component
+- Extracted Footer into a Separate Component
+
 <br>
 
 <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=git,github,vite,react,tailwindcss,typescript&theme=dark&perline=15" alt="My Skills" /></a>
