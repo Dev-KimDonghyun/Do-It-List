@@ -1,3 +1,5 @@
+import TaskItemButtons from "./TaskItemButtons";
+
 type TaskItem = {
   todo: {
     id: number;
@@ -19,38 +21,11 @@ const TaskItem = ({ todo, deleteToDo, compeleteToDo }: TaskItem) => {
         <span className="w-[90%] md:w-[40%] right text-4xl text-sky-800 mx-auto truncate block">
           {todo.content}
         </span>
-        <div className="bg-sky-300 flex text-center items-center justify-center w-68 md:w-76 h-10 rounded-2xl md:mr-2">
-          {todo.didIt ? (
-            <span className="text-2xl text-green-500">Done</span>
-          ) : (
-            <span className="text-2xl text-yellow-500">Doing</span>
-          )}
-          <button
-            className="mx-2 text-md px-1 rounded-lg bg-blue-200 cursor-pointer"
-            onClick={() => {
-              compeleteToDo(todo.id);
-            }}
-          >
-            {todo.didIt ? (
-              <span className="text-md text-yellow-500 cursor-pointer">
-                Undo
-              </span>
-            ) : (
-              <span className="text-md text-green-500 cursor-pointer">
-                Done
-              </span>
-            )}
-          </button>
-          <button
-            className="text-md text-red-500 px-1 rounded-lg bg-blue-200 cursor-pointer"
-            onClick={() => {
-              deleteToDo(todo.id);
-            }}
-          >
-            Delete
-          </button>
-          <span className="w-24 md:w-auto h-10 md:h-auto ml-0 md:ml-2 pl-2 md:px-0 text-sm md:text-md">{todo.whenCreated}</span>
-        </div>
+        <TaskItemButtons
+          deleteToDo={deleteToDo}
+          compeleteToDo={compeleteToDo}
+          todo={todo}
+        />
       </li>
     </div>
   );

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
-import "./styles/index.css";
 import DeleteAllBtn from "./components/DeleteAllBtn";
+import "./styles/index.css";
 
 type ToDo = {
   id: number;
