@@ -38,12 +38,18 @@ Version 1.0.0 - 2025.05.08 ~ 2025.05.19
 
 Version 1.1.0 - 2025.06.05
 
+Version 1.1.1 - 2025.07.20
+
 ## Update Log
 
 ### 1.1.0 - 2025.06.05
 
 - Extracted Buttons from Task Item into a Separate Component
 - Extracted Footer into a Separate Component
+
+### 1.1.1 - 2025.07.20
+
+- Fixed typos in variable and local storage key names
 
 <br>
 
