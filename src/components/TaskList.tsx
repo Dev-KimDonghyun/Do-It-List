@@ -10,10 +10,10 @@ type ToDo = {
 type TaskListProps = {
   toDoList: ToDo[];
   deleteToDo: (id: number) => void;
-  compeleteToDo: (id: number) => void;
+  completeToDo: (id: number) => void;
 };
 
-const TaskList = ({ toDoList, deleteToDo, compeleteToDo }: TaskListProps) => {
+const TaskList = ({ toDoList, deleteToDo, completeToDo }: TaskListProps) => {
   return (
     <div>
       <ul className="mb-24">
@@ -22,7 +22,7 @@ const TaskList = ({ toDoList, deleteToDo, compeleteToDo }: TaskListProps) => {
             key={todo.id}
             todo={todo}
             deleteToDo={deleteToDo}
-            compeleteToDo={compeleteToDo}
+            completeToDo={completeToDo}
           />
         ))}
       </ul>

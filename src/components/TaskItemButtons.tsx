@@ -6,10 +6,10 @@ type ButtonsType = {
     didIt: boolean;
   };
   deleteToDo: (id: number) => void;
-  compeleteToDo: (id: number) => void;
+  completeToDo: (id: number) => void;
 };
 
-const TaskItemButtons = ({ todo, deleteToDo, compeleteToDo }: ButtonsType) => {
+const TaskItemButtons = ({ todo, deleteToDo, completeToDo }: ButtonsType) => {
   return (
     <div className="bg-sky-300 flex text-center items-center justify-center w-68 md:w-76 h-10 rounded-2xl md:mr-2">
       {todo.didIt ? (
@@ -20,7 +20,7 @@ const TaskItemButtons = ({ todo, deleteToDo, compeleteToDo }: ButtonsType) => {
       <button
         className="mx-2 text-md px-1 rounded-lg bg-blue-200 cursor-pointer"
         onClick={() => {
-          compeleteToDo(todo.id);
+          completeToDo(todo.id);
         }}
       >
         {todo.didIt ? (

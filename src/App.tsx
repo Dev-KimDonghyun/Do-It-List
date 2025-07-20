@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     const localStorageValue: string | null = localStorage.getItem(
-      "DevKimDH_To_Do_Web_Value"
+      "DevKimDH_To_Do_Web_App_Value"
     );
     if (localStorageValue !== null) {
       const savedValue = JSON.parse(localStorageValue);
@@ -82,15 +82,15 @@ function App() {
     localStorage.setItem("DevKimDH_To_Do_Web_App_Value", JSON.stringify([]));
   };
 
-  const compeleteToDo = (id: number) => {
-    const compeleUpdateToDo = toDoList.map((todo) =>
+  const completeToDo = (id: number) => {
+    const completeUpdateToDo = toDoList.map((todo) =>
       todo.id === id ? { ...todo, didIt: !todo.didIt } : todo
     );
 
-    setToDoList(compeleUpdateToDo);
+    setToDoList(completeUpdateToDo);
     localStorage.setItem(
       "DevKimDH_To_Do_Web_App_Value",
-      JSON.stringify(compeleUpdateToDo)
+      JSON.stringify(completeUpdateToDo)
     );
   };
 
@@ -118,7 +118,7 @@ function App() {
             <TaskList
               toDoList={toDoList}
               deleteToDo={deleteToDo}
-              compeleteToDo={compeleteToDo}
+              completeToDo={completeToDo}
             />
           </div>
         </main>

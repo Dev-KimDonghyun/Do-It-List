@@ -8,10 +8,10 @@ type TaskItem = {
     didIt: boolean;
   };
   deleteToDo: (id: number) => void;
-  compeleteToDo: (id: number) => void;
+  completeToDo: (id: number) => void;
 };
 
-const TaskItem = ({ todo, deleteToDo, compeleteToDo }: TaskItem) => {
+const TaskItem = ({ todo, deleteToDo, completeToDo }: TaskItem) => {
   return (
     <div className="mt-8 flex text-center items-center justify-center">
       <li
@@ -23,7 +23,7 @@ const TaskItem = ({ todo, deleteToDo, compeleteToDo }: TaskItem) => {
         </span>
         <TaskItemButtons
           deleteToDo={deleteToDo}
-          compeleteToDo={compeleteToDo}
+          completeToDo={completeToDo}
           todo={todo}
         />
       </li>
