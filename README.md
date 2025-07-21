@@ -1,20 +1,24 @@
 # Do It! List
 
-Dev-KimDonghyun's Personal Project
+Dev-KimDonghyun's personal project
 
 <br>
 
 ---
 
-### Project Refactoring Notice
+### Project refactoring notice
 
-This project is scheduled for refactoring to improve its code structure and functionality. The next version will be developed in a separate repository. Please refer to the following details:
+**You can access the refactored version here:**
 
-**Reasons for Refactoring**
+[Ref-Do It! List (Do It! List Refactor Version)](https://github.com/Dev-KimDonghyun/Ref-Do-It-List.git)
 
-- Improved component modularity and reusability
-- Enhance UI to provide a better user experience
-- Replacing complex Props with global state management using Redux
+This project is undergoing refactoring to improve its code structure and functionality. The next version will be developed in a separate repository. Please refer to the following details:
+
+**Reasons for refactoring**
+
+- Improve component modularity and reusability  
+- Enhance the UI for a better user experience  
+- Replace complex props with global state management using Redux
 
 
 This repository is now archived. No new features or bug fixes will be added.
@@ -27,21 +31,21 @@ It is preserved to retain the development history of the pre-refactored version.
 
 ## Description
 
-Simple Responsive To Do Web App Developed with React Using Browser Local Storage
+Simple responsive To Do Web App developed with React using browser local storage
 
 ## Features
 
-- Add and Delete Todo Items
-- Mark Tasks as Completed or Incomplete
-- Fully Responsive UI (PC & Mobile)
-- Data Stored in Browser LocalStorage
+- Add and delete to-do items
+- Mark tasks as completed or incomplete
+- Fully responsive UI (PC & Mobile)
+- Data stored in browser local storage
 
 ## Tech Stack
 
-- Git & Github
+- Git & GitHub
 - React + TypeScript + Vite
 - TailwindCSS
-- LocalStorage
+- Browser Local Storage
 
 ## Installation
 
@@ -67,8 +71,8 @@ Version 1.1.1 - 2025.07.20
 
 ### 1.1.0 - 2025.06.05
 
-- Extracted Buttons from Task Item into a Separate Component
-- Extracted Footer into a Separate Component
+- Extracted buttons from Task Item into a separate component
+- Extracted footer into a separate component
 
 ### 1.1.1 - 2025.07.20
 
