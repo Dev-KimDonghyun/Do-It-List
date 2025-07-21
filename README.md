@@ -2,6 +2,29 @@
 
 Dev-KimDonghyun's Personal Project
 
+<br>
+
+---
+
+### Project Refactoring Notice
+
+This project is scheduled for refactoring to improve its code structure and functionality. The next version will be developed in a separate repository. Please refer to the following details:
+
+**Reasons for Refactoring**
+
+- Improved component modularity and reusability
+- Enhance UI to provide a better user experience
+- Replacing complex Props with global state management using Redux
+
+
+This repository is now archived. No new features or bug fixes will be added.
+
+It is preserved to retain the development history of the pre-refactored version.
+
+---
+
+<br>
+
 ## Description
 
 Simple Responsive To Do Web App Developed with React Using Browser Local Storage
