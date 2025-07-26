@@ -2,7 +2,14 @@
 
 Dev-KimDonghyun's personal project
 
-<br>
+## Retrospective
+
+- **Experience**:
+Through this project, I became familiar with React and TailwindCSS, and learned how to handle basic read/write operations using localStorage. However, I encountered issues caused by unstructured component separation, which led to complex and inefficient prop drilling.
+- **Lesson Learned**:
+I learned that component separation should be planned carefully from the beginning. When a project’s component structure is expected to grow in complexity, it’s more effective to use the Context API or a dedicated state management library.
+- **Next Action**:
+In the refactored version of this project, Ref-Do-It-List, I will design and document the component structure beforehand and build the application using the Redux state management library.
 
 ---
 
